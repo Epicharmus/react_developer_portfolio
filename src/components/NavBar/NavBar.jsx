@@ -47,8 +47,8 @@ function NavBar() {
                 </Nav>
                 <span className="navbar-text">
                     <div className="social-icon">
-                        <a href="#"><img src={github} alt="GitHub" /></a>
-                        <a href="#"><img src={linkedIn} alt="LinkedIn" /></a>
+                        <a href="https://github.com/Epicharmus"><img src={github} alt="GitHub" /></a>
+                        <a href="https://www.linkedin.com/in/tesla-lyon/"><img src={linkedIn} alt="LinkedIn" /></a>
                     </div>
                     <button className="vvd" onClick={() => console.log("connect")}>
                         <span>Let's Connect</span>

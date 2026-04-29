@@ -42,7 +42,11 @@ function NavBar() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
                     <Nav.Link href="#home" className={activeLink === 'home' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+                    {/*
+                    Add at a later date -- skills section to be created
+                    
                     <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
+                    */}
                     <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
                 </Nav>
                 <span className="navbar-text">

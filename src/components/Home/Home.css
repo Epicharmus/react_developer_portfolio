@@ -1,0 +1,83 @@
+/* Color Codes */
+
+:root {
+    --black: #080E18;
+    --dark-grey:#838688;
+    --mid-grey: #7A7A76;
+    --light-grey:#dfdedb;
+    --off-white: #F9F1DF;
+    --primary-green: #194B47;
+    --light-green: #347853;
+    --primary-purple: #293867;
+    --light-purple: #9275BC;
+}
+
+/* Styling */
+
+#home {
+    background: linear-gradient(60deg, var(--primary-purple), var(--primary-green), var(--light-green));
+    padding: auto;
+}
+
+.banner {
+    margin-top: 0;
+    padding: 100px 0 100px 0;
+    background-image: url("");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    color: var(--light-grey);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.banner h1 {
+    color: var(--off-white);
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.banner p {
+    color: var(--light-grey);
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    width: 96%;
+}
+
+.banner button {
+    color: var(--off-white);
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 60px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-green);
+    border: 2px solid var(--light-grey);
+    border-radius: 1em;
+    padding: 0.5em;
+    transition: 0.3s ease-in-out;
+}
+
+.banner button:hover {
+    color: var(--light-purple);
+    border-color: var(--light-purple);
+}
+
+.banner img {
+    width: 28em;
+    border-radius: 1em;
+    border: 6px var(--light-green);
+}

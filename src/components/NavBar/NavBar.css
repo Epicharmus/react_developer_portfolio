@@ -2,7 +2,7 @@
 
 :root {
     --black: #080E18;
-    --dark-grey:#656769;
+    --dark-grey:#838688;
     --mid-grey: #7A7A76;
     --light-grey:#dfdedb;
     --off-white: #F9F1DF;
@@ -24,12 +24,7 @@ nav.navbar {
     transition: 0.32 ease-in-out;
     border-bottom-left-radius: 1.5em;
     border-bottom-right-radius: 1.5em;
-    box-shadow: 5px 5px 20px 2px var(--dark-grey);
-}
-
-nav.navbar.scrolled {
-    padding: 0px 0;
-    background-color: var(--dark-grey);
+    box-shadow: 5px 5px 20px 2px var(--primary-purple);
 }
 
 nav.navbar a.navbar-brand {

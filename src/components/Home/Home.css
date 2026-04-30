@@ -76,7 +76,7 @@
 }
 
 .banner img {
-    width: 28em;
+    max-width: 28em;
     border-radius: 1em;
     border: 6px var(--light-green);
 }

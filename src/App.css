@@ -1,0 +1,20 @@
+/* Color Codes */
+
+:root {
+    --black: #080E18;
+    --dark-grey:#838688;
+    --mid-grey: #7A7A76;
+    --light-grey:#dfdedb;
+    --off-white: #F9F1DF;
+    --primary-green: #194B47;
+    --light-green: #347853;
+    --primary-purple: #293867;
+    --light-purple: #9275BC;
+}
+
+/* Styling */
+
+body {
+    background: linear-gradient(60deg, var(--primary-purple), var(--primary-green), var(--light-green));
+    padding: auto;
+}

@@ -15,11 +15,10 @@
 /* Styling */
 
 #projects {
-    background: linear-gradient(150deg, var(--primary-purple), var(--primary-green), var(--light-green));
     padding: auto;
 }
 
-.banner {
+.project {
     margin-top: 0;
     padding: 100px 0 100px 0;
     background-image: url("");
@@ -28,19 +27,9 @@
     background-repeat: no-repeat;
 }
 
-.banner .tagline {
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    padding: 8px 10px;
-    color: var(--light-grey);
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: inline-block;
-}
-
-.banner h1 {
+.project h2 {
     color: var(--off-white);
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1;
@@ -48,36 +37,48 @@
     display: block;
 }
 
-.banner p {
+.project h4 {
+    color: var(--off-white);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.project p {
     color: var(--light-grey);
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
 }
 
-.banner button {
+.button {
+    width: 6em;
     color: var(--off-white);
     font-weight: 700;
     font-size: 20px;
-    margin-top: 60px;
     letter-spacing: 0.8px;
     display: flex;
-    align-items: center;
     background-color: var(--primary-green);
     border: 2px solid var(--light-grey);
     border-radius: 1em;
     padding: 0.5em;
+    margin: auto;
     transition: 0.3s ease-in-out;
 }
 
-.banner button:hover {
+.button:hover {
     color: var(--light-purple);
     border-color: var(--light-purple);
 }
 
-.banner img {
-    width: 28em;
+.proj-imgbx img{
+    width: 24em;
+    height: 14em;
+    object-fit: fill;
     border-radius: 1em;
     border: 6px var(--light-green);
 }

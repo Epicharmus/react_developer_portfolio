@@ -15,7 +15,6 @@
 /* Styling */
 
 #home {
-    background: linear-gradient(60deg, var(--primary-purple), var(--primary-green), var(--light-green));
     padding: auto;
 }
 

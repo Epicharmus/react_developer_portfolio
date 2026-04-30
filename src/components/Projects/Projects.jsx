@@ -36,7 +36,11 @@ function Projects() {
             <Row>
                 <Col>
                 <h2>Projects</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Check out my projects below to see my work in action.</p>
+                <p>I build full-stack web applications using HTML, CSS, JavaScript, and Python. My primary stack includes React, Node.js, and Express, where I focus on creating scalable and maintainable applications.</p>
+                <p>I have experience working with both MongoDB and SQL, designing and integrating databases to support dynamic, data-driven features.</p>
+                <p>On the frontend, I enjoy writing custom CSS to create clean, responsive designs, while also using frameworks like Bootstrap and Tailwind to efficiently build polished user interfaces.</p>
+                <p>In Python, I’ve worked with libraries such as Matplotlib, NumPy, and Pandas for data analysis and visualization.</p>
                 <div>
                     <Row>
                         {

@@ -14,17 +14,17 @@ function Projects() {
             title: "Our National Conversation",
             description: "Software Development Intern (Frontend)",
             imgUrl: onc,
-            liveLink: "'https://www.ournationalconversation.org/'"
+            liveLink: "https://www.ournationalconversation.org/"
         },
         {
             title: "Habit Tracker",
             description: "An in-progress CRUD app",
             imgUrl: habitTracker,
-            liveLink: "''"
+            liveLink: ""
         },
         {
             title: "Portfolio",
-            description: "'My portfolio site (you're here!)'",
+            description: "My portfolio site (you're here!)",
             imgUrl: portfolio,
             liveLink: "https://www.teslalyon.com/"
         }

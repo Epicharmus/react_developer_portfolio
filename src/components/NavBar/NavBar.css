@@ -45,6 +45,34 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
 }
 
+.active-navbar-link {
+    color: var(--light-grey) !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar-collapse {
+    background-color: var(--primary-purple);
+    /* background-color: rgba(146, 117, 188, 0.35);*/
+    padding: 1rem;
+    border-top: none !important;
+    border: 2px solid var(--off-white);
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    position: absolute;
+    top: 100%;
+    width: 90%;
+    z-index: 999;
+}
+
+nav.navbar .navbar-collapse .nav-link.navbar-link{
+    font-weight: 400;
+    color: var(--off-white);
+    letter-spacing: 0.8px;
+    padding: 0.5em;
+    font-size: 16px;
+}
+
 span.navbar-text {
     display: flex;
     align-items: center;
@@ -114,13 +142,14 @@ span.navbar-text {
     content: "";
     width: 0%;
     height: 100%;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
     background-color: var(--light-purple);
     left: 0;
     top: 0;
     z-index: -1;
     transition: 0.3s ease-in-out;
-    border: 1px solid var(--light-grey);
+    border: none;
     border-radius: 1em;
 }
 
@@ -132,7 +161,8 @@ span.navbar-text {
     content: "";
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
 }
 
 nav.navbar .navbar-toggler:active,

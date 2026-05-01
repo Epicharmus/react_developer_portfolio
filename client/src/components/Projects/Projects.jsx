@@ -1,7 +1,7 @@
 /* import { useState, useEffect } from "react"; */
 import { Container, Row, Col } from "react-bootstrap";
 import "./Projects.css";
-import onc from "../../assets/ournationalconversation_screengrab.png"
+import onc from "../../assets/project_screengrabs/ournationalconversation_screengrab.png"
 import habitTracker from "../../assets/project_screengrabs/habit_tracker_figmascreengrab.png"
 import portfolio from "../../assets/project_screengrabs/developer_portfolio.png"
 import placeholder from "../../assets/project_screengrabs/placeholder_browser.jpg"

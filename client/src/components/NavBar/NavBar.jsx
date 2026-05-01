@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import dev_icon from '../../assets/dev_icon.png';
+import dev_icon from '../../assets/dev_icons/dev_icon.png';
 import linkedIn from '../../assets/in-logo/InBug-White.png';
 import github from '../../assets/github-mark/github-mark-white.svg';
 import "./NavBar.css";

@@ -82,5 +82,5 @@
     width: 28em;
     max-width: 100%;
     border-radius: 1em;
-    border: 6px var(--light-green);
+    border: 2px solid rgba(249, 241, 223, 0.15);
 }

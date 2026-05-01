@@ -14,8 +14,11 @@
 
 /* Styling */
 
+/* ToDo */
+/* Style for mobile */
+
 #projects {
-    padding: auto;
+    padding: 80px 0;
 }
 
 .project {
@@ -25,6 +28,14 @@
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.project-tx {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project h2 {
@@ -49,10 +60,12 @@
 
 .project p {
     color: var(--light-grey);
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .button {
@@ -88,42 +101,46 @@
 .proj-imgbx::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     background: linear-gradient(90.21deg, var(--light-green), var(--light-purple));
     opacity: 0.95;
-    position: absolute;
-    width: 100%;
-    height: 0;
-    transition: 0.4s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
 
 .proj-imgbx:hover::before {
-    height: 100%;
+    transform: scaleY(1);
 }
 
 .proj-imgbx img{
-    width: 24em;
+    width: 100%;
     height: 14em;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 1em;
-    border: 6px var(--light-green);
-    z-index: 0;
 }
 
 .proj-txtx {
     position: absolute;
     text-align: center;
-    top: 65%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     opacity: 0;
-    width: 100%;
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
 }
 
 .proj-imgbx:hover .proj-txtx {
-    top: 50%;
     opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.proj-imgbx img {
+    transition: transform 0.5s ease;
+}
+
+.proj-imgbx:hover img {
+    transform: scale(1.05);
 }

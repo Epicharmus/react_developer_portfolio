@@ -11,21 +11,34 @@ function NavBar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => {
-            if (window.scrollY > 50){
-                setScrolled(true);
-            } else {
-                setScrolled(false);
+    const onScroll = () => {
+        if (window.scrollY > 50){
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+
+        const sections = document.querySelectorAll("section");
+
+        let current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+
+            if (window.scrollY >= sectionTop - 100) {
+                current = section.getAttribute("id");
             }
-        }
+        });
 
-        window.addEventListener("scroll", onScroll);
-
-        return () => window.removeEventListener("scroll", onScroll);
-    }, [])
-        const onUpdateActiveLink = (value) => {
-            setActiveLink(value);
+        if (current) {
+            setActiveLink(current);
         }
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
     return (
     <Navbar expand="md" className={scrolled ? "scrolled": ""}>
@@ -41,22 +54,20 @@ function NavBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
-                    <Nav.Link href="#home" className={activeLink === 'home' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+                    <Nav.Link href="#home" className={activeLink === 'home' ? 'active-navbar-link' : 'navbar-link'} onClick={() => setActiveLink('home')}>Home</Nav.Link>
                     {/*
                     Add at a later date -- skills section to be created
                     
                     <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
                     */}
-                    <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active-navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                    <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active-navbar-link' : 'navbar-link'} onClick={() => setActiveLink('projects')}>Projects</Nav.Link>
+                    <Nav.Link href="#connect" className={activeLink === 'connect' ? 'active-navbar-link' : 'navbar-link'} onClick={() => setActiveLink('connect')}>Let's Connect</Nav.Link>
                 </Nav>
                 <span className="navbar-text">
                     <div className="social-icon">
                         <a href="https://github.com/Epicharmus"><img src={github} alt="GitHub" /></a>
                         <a href="https://www.linkedin.com/in/tesla-lyon/"><img src={linkedIn} alt="LinkedIn" /></a>
                     </div>
-                    <button className="vvd" onClick={() => console.log("connect")}>
-                        <span>Let's Connect</span>
-                    </button>
                 </span>
             </Navbar.Collapse>
         </Container>

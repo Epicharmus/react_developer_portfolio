@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import { z } from "zod";
 
 dotenv.config();
 
@@ -11,6 +12,14 @@ app.use(cors({
     origin: "http://localhost:5173"
 }));
 app.use(express.json());
+
+const contactSchema = z.object({
+    firstName: z.string().min(2).max(50),
+    lastName: z.string().min(2).max(50),
+    email: z.string().email(),
+    phone: z.string().min(7).max(20).optional(),
+    message: z.string().min(10).max(1000)
+});
 
 const contactEmail = nodemailer.createTransport({
     service: "gmail",
@@ -35,13 +44,21 @@ app.get("/contact", (req, res) => {
 app.post("/contact", (req, res) => {
     console.log("Contact route hit");
 
-    const name = `${req.body.firstName} ${req.body.lastName}`;
-    const email = req.body.email;
-    const message = req.body.message;
-    const phone = req.body.phone;
+    const result = contactSchema.safeParse(req.body);
+
+    if (!result.success) {
+        return res.status(400).json({
+            code: 400,
+            status: "Invalid input",
+            errors: result.error.issues
+        });
+    }
+
+    const { firstName, lastName, email, phone, message } = result.data;
+    const name = `${firstName} ${lastName}`;
 
     const mail = {
-        from: process.env.EMAIL_USER,   // ✅ important fix
+        from: process.env.EMAIL_USER,
         to: "tesla.a.lyon@gmail.com",
         subject: "Contact Form Submission - Portfolio",
         replyTo: email,

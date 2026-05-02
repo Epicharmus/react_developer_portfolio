@@ -7,9 +7,10 @@ import { z } from "zod";
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 
 app.use(cors({
-    origin: "https://your-frontend-name.onrender.com",
+    origin: "https://react-developer-portfolio.onrender.com",
     methods: ["GET", "POST"],
     credentials: true
 }));
@@ -66,7 +67,7 @@ app.post("/contact", (req, res) => {
         html: `
             <p><b>Name:</b> ${name}</p>
             <p><b>Email:</b> ${email}</p>
-            <p><b>Phone:</b> ${phone}</p>
+            <p><b>Phone:</b> ${phone || "N/A"}</p>
             <p><b>Message:</b> ${message}</p>
         `,
     };

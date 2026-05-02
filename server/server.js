@@ -73,7 +73,8 @@ app.post("/contact", async (req, res) => {
 
         return res.status(500).json({
             code: 500,
-            status: "Email failed"
+            status: "Email failed",
+            error: error?.message || error
         });
     }
 });

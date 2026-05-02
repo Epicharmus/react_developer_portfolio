@@ -3,6 +3,7 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { z } from "zod";
+import { Resend } from "resend";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(cors({
     methods: ["GET", "POST"],
     credentials: true
 }));
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 console.log("EMAIL_USER:", process.env.EMAIL_USER);
 console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
@@ -46,7 +49,7 @@ app.get("/contact", (req, res) => {
     res.send("GET works — use POST for form");
 });
 
-app.post("/contact", (req, res) => {
+app.post("/contact", async (req, res) => {
     console.log("Contact route hit");
 
     const result = contactSchema.safeParse(req.body);
@@ -62,30 +65,33 @@ app.post("/contact", (req, res) => {
     const { firstName, lastName, email, phone, message } = result.data;
     const name = `${firstName} ${lastName}`;
 
-    const mail = {
-        from: process.env.EMAIL_USER,
-        to: "tesla.a.lyon@gmail.com",
-        subject: "Contact Form Submission - Portfolio",
-        replyTo: email,
-        html: `
-            <p><b>Name:</b> ${name}</p>
-            <p><b>Email:</b> ${email}</p>
-            <p><b>Phone:</b> ${phone || "N/A"}</p>
-            <p><b>Message:</b> ${message}</p>
-        `,
-    };
+    try {
+        await resend.emails.send({
+            from: "onboarding@resend.dev", // change later to your domain
+            to: "tesla.a.lyon@gmail.com",
+            subject: "Contact Form Submission - Portfolio",
+            reply_to: email,
+            html: `
+                <p><b>Name:</b> ${name}</p>
+                <p><b>Email:</b> ${email}</p>
+                <p><b>Phone:</b> ${phone || "N/A"}</p>
+                <p><b>Message:</b> ${message}</p>
+            `,
+        });
 
-    contactEmail.sendMail(mail, (error) => {
-        if (error) {
-            console.error("MAIL ERROR:", error);
-            return res.status(500).json({
-                code: 500,
-                status: "Email failed"
-            });
-        }
+        return res.json({
+            code: 200,
+            status: "Message Sent"
+        });
 
-        res.json({ code: 200, status: "Message Sent" });
-    });
+    } catch (error) {
+        console.error("EMAIL ERROR:", error);
+
+        return res.status(500).json({
+            code: 500,
+            status: "Email failed"
+        });
+    }
 });
 
 app.listen(process.env.PORT || 5000, () => {

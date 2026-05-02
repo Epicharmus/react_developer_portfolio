@@ -9,9 +9,10 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: "https://your-frontend-name.onrender.com",
+    methods: ["GET", "POST"],
+    credentials: true
 }));
-app.use(express.json());
 
 const contactSchema = z.object({
     firstName: z.string().min(2).max(50),

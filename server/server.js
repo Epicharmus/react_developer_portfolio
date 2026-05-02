@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { z } from "zod";
 import { Resend } from "resend";
@@ -20,6 +19,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 console.log("EMAIL_USER:", process.env.EMAIL_USER);
 console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
+console.log("RESEND KEY:", !!process.env.RESEND_API_KEY);
 
 const contactSchema = z.object({
     firstName: z.string().min(2).max(50),
@@ -27,22 +27,6 @@ const contactSchema = z.object({
     email: z.string().email(),
     phone: z.string().min(7).max(20).optional(),
     message: z.string().min(10).max(1000)
-});
-
-const contactEmail = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    },
-});
-
-contactEmail.verify((error) => {
-    if (error) {
-        console.error("Email config error:", error);
-    } else {
-        console.log("Ready to Send");
-    }
 });
 
 app.get("/contact", (req, res) => {

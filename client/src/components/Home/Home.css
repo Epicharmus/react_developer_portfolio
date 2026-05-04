@@ -55,8 +55,9 @@
     width: 96%;
 }
 
-.banner button {
+.banner a {
     color: var(--off-white);
+    width: fit-content;
     font-weight: 700;
     font-size: 20px;
     margin-top: 60px;
@@ -73,7 +74,7 @@
     transition: 0.3s ease-in-out;
 }
 
-.banner button:hover {
+.banner a:hover {
     color: var(--light-purple);
     border-color: var(--light-purple);
 }

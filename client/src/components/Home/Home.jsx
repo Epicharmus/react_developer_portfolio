@@ -49,7 +49,7 @@ function Home() {
                     <span className="tagline">Welcome to my Portfolio!</span>
                     <h1>{`Hi, I'm Tesla Lyon: `}<span className="wrap">{text}</span></h1>
                     <p>I'm a student, developer, artist, and dedicated lifelong learner. I have a passion for creating clean, user-focused applications that solve problems and create engaging experiences. I have a background in teaching and customer service, both of which have helped me learn the value of clear communication and adaptability, and which help me to keep real people in mind when I am developing web applications and software. I collaborate well with teams and I can be an independent self-starter. If you're looking for a developer to bring your ideas to life or to improve an existing project, I'm your person.</p>
-                    <button onClick={() => console.log("connect")}>Let's connect</button>
+                    <a href="#connect" classname="button">Let's connect</a>
                 </Col>
                 <Col xs={12} md={5} xl={5}>
                     <img src={ headerImage }id="headerImage" alt="Header Image" />

@@ -31,7 +31,7 @@ function Projects() {
         },
         {
             title: "Vehicle Maintenance Log",
-            description: "Pyhon-based vehicle maintenance log program that manages CSV files",
+            description: "Pyhon-based vehicle maintenance log program",
             imgUrl: placeholder,
             liveLink: "https://github.com/Epicharmus/maintenance_log"
         },

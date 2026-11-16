@@ -30,10 +30,10 @@ function Projects() {
             liveLink: "https://www.teslalyon.com/"
         },
         {
-            title: "TBA",
-            description: "Placeholder image via vecteezy.com",
+            title: "Vehicle Maintenance Log",
+            description: "Pyhon-based vehicle maintenance log program that manages CSV files",
             imgUrl: placeholder,
-            liveLink: "https://www.vecteezy.com/vector-art/5429687-browser-window-mockup-modern-internet-page"
+            liveLink: "https://github.com/Epicharmus/maintenance_log"
         },
         {
             title: "TBA",

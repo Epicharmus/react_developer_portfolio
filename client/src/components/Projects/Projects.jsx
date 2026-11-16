@@ -4,6 +4,7 @@ import "./Projects.css";
 import onc from "../../assets/project_screengrabs/ournationalconversation_screengrab.png"
 import habitTracker from "../../assets/project_screengrabs/habit_tracker_figmascreengrab.png"
 import portfolio from "../../assets/project_screengrabs/developer_portfolio.png"
+import vml from "../../assets/project_screengrabs/vehicle_maintenance_log_screengrab.png"
 import placeholder from "../../assets/project_screengrabs/placeholder_browser.jpg"
 import ProjectCard from "./ProjectCard.jsx"
 import "./Projects.css";
@@ -32,7 +33,7 @@ function Projects() {
         {
             title: "Vehicle Maintenance Log",
             description: "Pyhon-based vehicle maintenance log program",
-            imgUrl: placeholder,
+            imgUrl: vml,
             liveLink: "https://github.com/Epicharmus/maintenance_log"
         },
         {
